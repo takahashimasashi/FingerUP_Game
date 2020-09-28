@@ -1,50 +1,101 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
         <meta charset="UTF-8">
         <title>FingerUp_Game</title>
         <link rel="stylesheet" href="style.css" type="text/css" media="all">
-    </head>
-    <body>
-    <!-- 名前を入力 -->
-    <!--
+</head>
+<body>
+
+    <!--接続中-->
+    <section id="nowconnecting">
+    ...サーバに接続中
+    </section>
+    <!--/接続中-->
+
+    <!--名前を入力-->
     <section id="inputmyname">
     <p>あなたの名前を入力してください</p>
     <form id="frm-myname" autocomplete="off">
         <input type="text" id="txt-myname">
         <button>入室</button>
     </form>
-    </section>-->
-    <!-- /名前を入力 -->
+    </section>
+    <!--/名前を入力-->
+    
+    <!--ロビー-->
+    <section id="Lobby">
+        <p id="waiting_people">待機中：0人</p>
+        <!-- メンバー一覧 -->
+        <ul id="memberlist"></ul>
+        <!-- ログアウト -->
+        <form id="frm-quit">
+          <button>退室する</button>
+        </form>
+    </section>
+    <!--/ロビー-->
 
-    <section id="My_Hands">
+    <!--ゲーム-->
+    <section id="Game">
+    <div id="My_Hands">
         <p>あなたの手</p>
-        <img src="../Image/Lfinger_down.png" id="My_Hands">
-        <img src="../Image/Rfinger_down.png">
+        <span id="myname"></span><br>
+        <img src="Image/Lfinger_down.png" id="MyLHands_Image">
+        <img src="Image/Rfinger_down.png" id="MyRHands_Image">
         <p>立てる指の数を選んでください</p>
         <select id="UpFingersNum">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
         </select>
+        <div id="Parent">
+            <p>立つ指の本数を予想してください</p>
+            <select id="FingerUpExpect">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
         <form id="SendFingersNum" autocomplete="off">
             <button>決定</button>
         </form>
-    </section>    
-    <section id="RightMan_Hands">
-        <p>右側にいる人の手</p>
-        <img src="../Image/Lfinger_down.png">
-        <img src="../Image/Rfinger_down.png">
+    </div>
+    <div id="FIngerUp-display">
+        <p>指の本数</p>
+        <span id="open-hands">0</span><br>
+    </div>
+    <div id="Firstman-Hands">
+        <p>左</p>
+        <span id="firstman-hands"></span>
+        <span id="firstman-think">考え中</span><br>
+        <img src="Image/Lfinger_down.png">
+        <img src="Image/Rfinger_down.png">
+    </div>
+    <div id="Secondman-Hands">
+            <p>右</p>
+        <span id="secondman-hands"></span>
+        <span id="secondman-think">考え中</span><br>
+        <img src="Image/Lfinger_down.png">
+        <img src="Image/Rfinger_down.png">
+    </div>
+    <div id="Thirdman-Hands">
+            <p>上</p>
+        <span id="thirdman-hands"></span>
+        <span id="thirdman-think">考え中</span><br>
+        <img src="Image/Lfinger_down.png">
+        <img src="Image/Rfinger_down.png">
+    </div>
     </section>
-    <section id="LeftMan_Hands">
-        <p>左側にいる人の手</p>
-        <img src="../Image/Lfinger_down.png">
-        <img src="../Image/Rfinger_down.png">
-    </section>
-    <section id="FrontMan_Hands">
-        <p>正面にいる人の手</p>
-        <img src="../Image/Lfinger_down.png">
-        <img src="../Image/Rfinger_down.png">
-    </section>
-    </body>
+    <!--/ゲーム-->
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="util.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>

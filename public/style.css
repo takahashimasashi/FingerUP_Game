@@ -1,0 +1,44 @@
+@charset "utf8";
+
+#inputmyname{
+    display:none;
+}
+#Lobby{
+    display:none;
+}
+#Game{
+    display:none;
+}
+#txt-myname{
+    width: 300px;
+    font-size: 14pt;
+    padding: 4px;
+}
+#frm-myname button{
+    width: 80px;
+    height: 30px;
+    font-size: 12pt;
+}
+#memberlist{
+  width: 150px;
+  height: 300px;
+  overflow-y: scroll;
+  list-style-image: url(circle-solid.svg);
+  border: 1px solid gray;
+  padding: 5px 5px 5px 30px;  /* 上右下左 */
+  margin-left: 10px;
+}
+#My_Hands{
+}
+#FIngerUp-display{
+    /*display:none;
+*/}
+#Parent{
+    display:none;
+}
+#Firstman-Hands{
+}
+#Secondman_Hands{
+}
+#Thirdman_Hands{
+}

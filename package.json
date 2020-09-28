@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/takahashimasashi/FingerUP_Game#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "expres": "0.0.5",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
   }
 }
